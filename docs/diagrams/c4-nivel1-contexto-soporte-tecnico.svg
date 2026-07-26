@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Diagrama de Contexto (C4 Nivel 1)</text>
+  <text x="400" y="55" text-anchor="middle" font-size="12" fill="#777">Sistema de Soporte Tecnico ISP</text>
+
+  <!-- System box (center) -->
+  <rect x="280" y="180" width="240" height="100" rx="10" fill="#4A90D9" filter="url(#shadow)"/>
+  <text x="400" y="220" text-anchor="middle" font-size="15" font-weight="bold" fill="white">Sistema de Soporte</text>
+  <text x="400" y="242" text-anchor="middle" font-size="13" fill="white">ISP</text>
+  <text x="400" y="262" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">[Software System]</text>
+
+  <!-- Actor: Cliente (left) -->
+  <rect x="40" y="195" width="160" height="70" rx="8" fill="#4CAF50" filter="url(#shadow)"/>
+  <text x="120" y="225" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Cliente</text>
+  <text x="120" y="245" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">[Person]</text>
+
+  <!-- Actor: Tecnico (top-right) -->
+  <rect x="540" y="80" width="180" height="70" rx="8" fill="#FF9800" filter="url(#shadow)"/>
+  <text x="630" y="110" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Tecnico</text>
+  <text x="630" y="130" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">[Person]</text>
+
+  <!-- Actor: Administrador (bottom-right) -->
+  <rect x="540" y="310" width="180" height="70" rx="8" fill="#9C27B0" filter="url(#shadow)"/>
+  <text x="630" y="340" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Administrador</text>
+  <text x="630" y="360" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">[Person]</text>
+
+  <!-- Arrow: Cliente -> Sistema -->
+  <line x1="200" y1="230" x2="275" y2="230" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="237" y="220" text-anchor="middle" font-size="9" fill="#555">Crea solicitudes</text>
+
+  <!-- Arrow: Sistema -> Cliente -->
+  <line x1="275" y1="248" x2="200" y2="248" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="237" y="265" text-anchor="middle" font-size="9" fill="#555">Notifica estado</text>
+
+  <!-- Arrow: Tecnico -> Sistema -->
+  <line x1="540" y1="135" x2="420" y2="185" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="465" y="148" text-anchor="middle" font-size="9" fill="#555">Actualiza estado</text>
+
+  <!-- Arrow: Sistema -> Tecnico -->
+  <line x1="445" y1="180" x2="535" y2="125" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="505" y="160" text-anchor="middle" font-size="9" fill="#555">Asigna tickets</text>
+
+  <!-- Arrow: Administrador -> Sistema -->
+  <line x1="540" y1="345" x2="420" y2="295" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="465" y="332" text-anchor="middle" font-size="9" fill="#555">Gestiona asignaciones</text>
+
+  <!-- Arrow: Sistema -> Administrador -->
+  <line x1="445" y1="280" x2="535" y2="335" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="505" y="318" text-anchor="middle" font-size="9" fill="#555">Reportes y metricas</text>
+
+  <!-- Legend -->
+  <rect x="30" y="420" width="740" height="60" rx="6" fill="white" stroke="#ddd"/>
+  <text x="50" y="440" font-size="11" font-weight="bold" fill="#333">Leyenda:</text>
+  <rect x="50" y="450" width="14" height="14" rx="3" fill="#4CAF50"/>
+  <text x="70" y="462" font-size="10" fill="#555">Cliente</text>
+  <rect x="130" y="450" width="14" height="14" rx="3" fill="#FF9800"/>
+  <text x="150" y="462" font-size="10" fill="#555">Tecnico</text>
+  <rect x="220" y="450" width="14" height="14" rx="3" fill="#9C27B0"/>
+  <text x="240" y="462" font-size="10" fill="#555">Administrador</text>
+  <rect x="340" y="450" width="14" height="14" rx="3" fill="#4A90D9"/>
+  <text x="360" y="462" font-size="10" fill="#555">Sistema de Soporte ISP</text>
+  <line x1="520" y1="457" x2="560" y2="457" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="570" y="462" font-size="10" fill="#555">Comunicacion</text>
+</svg>
