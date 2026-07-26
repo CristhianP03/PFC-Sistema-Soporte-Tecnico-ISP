@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package soporte;
+
+service EventoTicketService {
+    rpc RegistrarEvento (EventoTicketRequest) returns (EventoTicketResponse);
+    rpc ConsultarTicket (ConsultarTicketRequest) returns (EventoTicketResponse);
+}
+
+message EventoTicketRequest {
+    string ticket_id = 1;
+    string tipo_evento = 2;       // ticket_creado, ticket_asignado, ticket_resuelto
+    string cliente_id = 3;
+    string asunto = 4;
+    int64 lamport_timestamp = 5;
+}
+
+message ConsultarTicketRequest {
+    string ticket_id = 1;
+}
+
+message EventoTicketResponse {
+    string ticket_id = 1;
+    string tipo_evento = 2;
+    string estado = 3;
+    int64 lamport_timestamp = 4;
+    string mensaje = 5;
+}
